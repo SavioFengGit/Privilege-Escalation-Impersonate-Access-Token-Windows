@@ -32,4 +32,5 @@ These three privileges are related to the security settings of Windows that allo
 3. **SeImpersonatePrivilege:** This privilege allows a process to impersonate a client that has been authenticated by the same process or a process that shares the same logon session. This is commonly used by client/server applications that need to access resources on behalf of the client. <br>
 These privileges are required to perform and impersonate access tokens because they enable a program to change its security context and access the objects that the user or account has permission to. 
 
+#Author
 <b>Xiao Li Savio Feng</b>
